@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ArticleReportController as AdminArticleReportCont
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\MaintenanceSettingController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
 use App\Http\Controllers\Admin\TestimonialController as AdminTestimonialController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -177,6 +178,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     Route::get('/pengaturan-iklan', [AdSettingController::class, 'index'])->name('ads.index');
     Route::post('/pengaturan-iklan', [AdSettingController::class, 'update'])->name('ads.update');
+
+    Route::get('/pengaturan-pemeliharaan', [MaintenanceSettingController::class, 'index'])->name('maintenance.index');
+    Route::post('/pengaturan-pemeliharaan', [MaintenanceSettingController::class, 'update'])->name('maintenance.update');
+    Route::get('/pengaturan-pemeliharaan/preview', [MaintenanceSettingController::class, 'preview'])->name('maintenance.preview');
 });
 
 require __DIR__.'/auth.php';

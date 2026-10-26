@@ -38,6 +38,20 @@
 </head>
 <body class="antialiased selection:bg-forest selection:text-white flex flex-col min-h-screen">
 
+    @if(auth()->check() && auth()->user()->isAdmin() && \App\Http\Middleware\CheckMaintenanceMode::isMaintenanceActive())
+        <div class="bg-amber-500 text-stone-950 px-4 py-2 text-xs md:text-sm font-semibold sticky top-0 z-50 border-b border-amber-600 shadow-sm">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-stone-950 animate-ping"></span>
+                    <span><strong>Mode Pemeliharaan Aktif:</strong> Pengunjung umum saat ini dialihkan ke halaman pemeliharaan. Anda dapat mengakses halaman ini sebagai Administrator.</span>
+                </div>
+                <a href="{{ route('admin.maintenance.index') }}" class="underline font-bold hover:text-white transition-colors flex-shrink-0">
+                    Pengaturan Mode Pemeliharaan &rarr;
+                </a>
+            </div>
+        </div>
+    @endif
+
     <x-header :isHome="$isHome" />
 
     {{ $slot }}

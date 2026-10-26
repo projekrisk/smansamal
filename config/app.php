@@ -121,6 +121,10 @@ return [
     'maintenance' => [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
+        'enabled' => env('APP_MAINTENANCE', env('MAINTENANCE_MODE', false)),
+        'title' => env('MAINTENANCE_TITLE', 'Situs Sedang Dalam Pemeliharaan'),
+        'message' => env('MAINTENANCE_MESSAGE', 'Kami sedang melakukan pemeliharaan rutin dan peningkatan performa sistem demi kenyamanan Anda. Silakan kembali dalam beberapa saat.'),
+        'end_time' => env('MAINTENANCE_END_TIME', null),
+        'secret' => env('MAINTENANCE_SECRET', null),
     ],
-
 ];
