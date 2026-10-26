@@ -96,7 +96,7 @@
                     </h1>
 
                     <p class="font-sans text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl">
-                        Membangun generasi cerdas, berkarakter luhur, dan berwawasan lingkungan di wilayah Banten Selatan.
+                        Mewujudkan peserta didik yang cerdas, berkarakter baik, dan peduli terhadap lingkungan.
                     </p>
                 </div>
 

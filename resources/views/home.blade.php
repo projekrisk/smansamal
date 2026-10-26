@@ -27,7 +27,7 @@
             <div class="max-w-3xl pointer-events-auto flex flex-col items-center">
                 <p class="font-sans text-stone-50 text-xs md:text-sm font-medium tracking-widest uppercase mb-4 drop-shadow-md">Cageur, Bageur, Bener, Pinter.</p>
                 <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl text-white leading-tight mb-8 drop-shadow-lg">
-                    Membangun Generasi <br><i class="text-stone-200">Masa Depan</i> Cemerlang.
+                    Tempat Bertumbuh <br>Meraih <i class="text-stone-200">Masa Depan</i>.
                 </h1>
 
                 <a href="{{ route('profil-sekolah') }}" class="inline-block bg-white text-stone-900 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold hover:bg-forest hover:text-white transition-colors duration-300 shadow-lg pointer-events-auto">
