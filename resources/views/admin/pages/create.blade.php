@@ -1,0 +1,140 @@
+<x-layouts.admin title="Tambah Halaman Statis - Dasbor Pengelola" headerTitle="Tambah Halaman">
+
+    <div class="mb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 font-sans">
+        <div>
+            <div class="flex items-center gap-2 text-xs text-stone-500 mb-1">
+                <a href="{{ route('admin.pages.index') }}" class="hover:text-forest transition-colors">Manajemen Halaman</a>
+                <span>/</span>
+                <span>Tambah Halaman</span>
+            </div>
+            <h1 class="font-serif text-2xl text-stone-900 font-bold">Buat Halaman Statis Baru</h1>
+        </div>
+        <a href="{{ route('admin.pages.index') }}" class="px-4 py-2 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 text-xs sm:text-sm font-bold tracking-wider transition-colors inline-flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            <span>Kembali</span>
+        </a>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-stone-200 shadow-2xs p-5 sm:p-8 font-sans w-full"
+        x-data="{
+            title: @js(old('title', '')),
+            slug: @js(old('slug', '')),
+            autoSlug: true,
+            generateSlug() {
+                if (this.autoSlug) {
+                    this.slug = this.title.toLowerCase()
+                        .replace(/[^\w\s-]/g, '')
+                        .replace(/[\s_-]+/g, '-')
+                        .replace(/^-+|-+$/g, '');
+                }
+            },
+            insertTag(tag, closeTag = '') {
+                const textarea = this.$refs.contentArea;
+                const start = textarea.selectionStart;
+                const end = textarea.selectionEnd;
+                const selected = textarea.value.substring(start, end);
+                const replacement = tag + selected + closeTag;
+                textarea.value = textarea.value.substring(0, start) + replacement + textarea.value.substring(end);
+                textarea.focus();
+                textarea.selectionStart = start + tag.length;
+                textarea.selectionEnd = start + tag.length + selected.length;
+            }
+        }">
+
+        <form action="{{ route('admin.pages.store') }}" method="POST" class="space-y-6">
+            @csrf
+
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                    Judul Halaman <span class="text-terracotta">*</span>
+                </label>
+                <input type="text" name="title" x-model="title" @input="generateSlug()" required placeholder="Contoh: Fasilitas & Laboratorium Sekolah" class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:border-forest focus:ring-forest @error('title') border-rose-400 @enderror">
+                @error('title')
+                    <span class="text-xs text-rose-600 font-medium mt-1 block">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div>
+                <div class="flex items-center justify-between mb-1.5">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-700">
+                        URL Slug <span class="text-terracotta">*</span>
+                    </label>
+                    <label class="inline-flex items-center gap-1.5 text-xs text-stone-500 cursor-pointer">
+                        <input type="checkbox" x-model="autoSlug" class="rounded text-forest focus:ring-forest">
+                        <span>Otomatis dari judul</span>
+                    </label>
+                </div>
+                <div class="flex rounded-xl shadow-2xs border border-stone-200 overflow-hidden focus-within:border-forest focus-within:ring-1 focus-within:ring-forest">
+                    <span class="inline-flex items-center px-3 text-xs bg-stone-100 text-stone-500 border-r border-stone-200">
+                        {{ url('/') }}/
+                    </span>
+                    <input type="text" name="slug" x-model="slug" @input="autoSlug = false" placeholder="fasilitas-laboratorium" class="w-full px-3 py-2.5 text-sm border-0 focus:ring-0">
+                </div>
+                @error('slug')
+                    <span class="text-xs text-rose-600 font-medium mt-1 block">{{ $message }}</span>
+                @else
+                    <span class="text-xs text-stone-400 mt-1 block">Tautan publik halaman ini nantinya dapat diakses langsung oleh pengunjung.</span>
+                @enderror
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                    Deskripsi Singkat / Ringkasan SEO (Opsional)
+                </label>
+                <textarea name="meta_description" rows="2" placeholder="Ringkasan penjelasan halaman untuk pencarian Google dan pratinjau media sosial..." class="w-full px-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:border-forest focus:ring-forest leading-relaxed">{{ old('meta_description') }}</textarea>
+                @error('meta_description')
+                    <span class="text-xs text-rose-600 font-medium mt-1 block">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div>
+                <div class="flex items-center justify-between mb-1.5">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-700">
+                        Konten Halaman (HTML / Teks) <span class="text-terracotta">*</span>
+                    </label>
+                    <span class="text-xs text-stone-400">Mendukung tag HTML & format teks</span>
+                </div>
+
+                <div class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+                    <div class="flex flex-wrap items-center gap-1 p-2 bg-stone-50 border-b border-stone-200 text-xs">
+                        <button type="button" @click="insertTag('<h2>', '</h2>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200 font-bold" title="Heading 2">H2</button>
+                        <button type="button" @click="insertTag('<h3>', '</h3>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200 font-bold" title="Heading 3">H3</button>
+                        <button type="button" @click="insertTag('<strong>', '</strong>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200 font-bold" title="Tebal">B</button>
+                        <button type="button" @click="insertTag('<em>', '</em>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200 italic font-bold" title="Miring">I</button>
+                        <button type="button" @click="insertTag('<p>', '</p>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200" title="Paragraf">P</button>
+                        <button type="button" @click="insertTag('<ul>\n  <li>', '</li>\n</ul>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200" title="Daftar Poin">Bullet List</button>
+                        <button type="button" @click="insertTag('<ol>\n  <li>', '</li>\n</ol>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200" title="Daftar Angka">Numbered List</button>
+                        <button type="button" @click="insertTag('<blockquote>', '</blockquote>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200" title="Kutipan">Quote</button>
+                        <button type="button" @click="insertTag('<a href=\'#\'>', '</a>')" class="px-2.5 py-1 rounded bg-white hover:bg-stone-200 text-stone-700 border border-stone-200" title="Tautan">Link</button>
+                    </div>
+
+                    <textarea name="content" x-ref="contentArea" rows="12" required placeholder="Tuliskan isi halaman di sini..." class="w-full p-4 text-sm font-sans leading-relaxed border-0 focus:ring-0 resize-y">{{ old('content') }}</textarea>
+                </div>
+                @error('content')
+                    <span class="text-xs text-rose-600 font-medium mt-1 block">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between">
+                <div>
+                    <span class="font-bold text-sm text-stone-900 block">Status Publikasi</span>
+                    <span class="text-xs text-stone-500">Jika aktif, halaman langsung dapat dibaca oleh publik melalui tautan URL.</span>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" name="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }} class="sr-only peer">
+                    <div class="w-11 h-6 bg-stone-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-forest"></div>
+                </label>
+            </div>
+
+            <div class="pt-5 border-t border-stone-200 flex items-center justify-end gap-3">
+                <a href="{{ route('admin.pages.index') }}" class="px-5 py-2.5 rounded-xl border border-stone-300 text-stone-600 text-sm font-bold tracking-wider hover:bg-stone-50 transition-colors">
+                    Batal
+                </a>
+                <button type="submit" class="bg-forest text-white px-6 py-2.5 rounded-xl text-sm font-bold tracking-wider hover:bg-stone-900 transition-colors shadow-2xs cursor-pointer">
+                    Simpan Halaman
+                </button>
+            </div>
+        </form>
+    </div>
+
+</x-layouts.admin>

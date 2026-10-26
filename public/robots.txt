@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Allow: /build/
+Allow: /images/
+Allow: /uploads/
+Allow: /icon.png
+Allow: /favicon.ico
+
+Disallow: /admin/
+Disallow: /warga/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /logout
+Disallow: /register
+Disallow: /password/
+Disallow: /pengaturan-iklan
+Disallow: /api/
+Disallow: /storage/*.php$
+Disallow: /*.env$
+Disallow: /*.git$
+Disallow: /*.sql$
+Disallow: /*.bak$
+Disallow: /*.log$
+Disallow: /*.yml$
+Disallow: /*.yaml$
+Disallow: /*.json$
+
+Sitemap: /sitemap.xml

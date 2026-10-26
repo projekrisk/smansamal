@@ -1,0 +1,321 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        background-color: #F9F8F6;
+        color: #2A2724;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.img-wrap {
+    overflow: hidden;
+}
+
+.img-wrap img {
+    transition: transform 0.8s ease;
+}
+
+.group:hover .img-wrap img {
+    transform: scale(1.05);
+}
+
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobile-overlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.prose p {
+    margin-bottom: 1.5rem;
+    line-height: 1.85;
+    font-size: 18px;
+}
+
+.prose h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.75rem;
+    color: #2A2724;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.prose h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    color: #2A2724;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.prose strong,
+.prose b {
+    font-weight: 700;
+    color: #1c1917;
+}
+
+.prose em,
+.prose i {
+    font-style: italic;
+}
+
+.prose u {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.prose s,
+.prose strike {
+    text-decoration: line-through;
+    color: #78716c;
+}
+
+.prose a {
+    color: #2A5C43;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+}
+
+.prose a:hover {
+    color: #CC7A6B;
+}
+
+.prose ul {
+    list-style-type: disc;
+    padding-left: 1.75rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.prose ol {
+    list-style-type: decimal;
+    padding-left: 1.75rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+    font-size: 18px;
+}
+
+.prose hr {
+    border: 0;
+    border-top: 1px dashed #d6d3d1;
+    margin: 2.5rem 0;
+}
+
+.prose blockquote {
+    border-left: 4px solid #2A5C43;
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: #3D3935;
+    font-size: 1.25rem;
+    margin: 2rem 0;
+    font-family: 'Fraunces', serif;
+}
+
+.prose img {
+    border-radius: 1rem;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.prose-editorial>p:first-of-type::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    float: left;
+    margin-right: 0.75rem;
+    margin-top: 0.2rem;
+    color: #2A5C43;
+    font-weight: 500;
+}
+
+.prose-editorial blockquote {
+    border-left: 0;
+    padding: 2rem 0;
+    margin: 3rem 0;
+    font-style: normal;
+    text-align: center;
+    position: relative;
+}
+
+.prose-editorial blockquote::before {
+    content: "“";
+    font-family: 'Fraunces', serif;
+    font-size: 5rem;
+    color: #CC7A6B;
+    opacity: 0.2;
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+}
+
+.prose-editorial blockquote p {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #3D3935;
+    margin: 0;
+}
+
+.prose-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #e7e5e4;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(42, 39, 36, 0.04);
+}
+
+.prose table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    text-align: left;
+    color: #2A2724;
+}
+
+.prose>table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #e7e5e4;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(42, 39, 36, 0.04);
+}
+
+.prose-table-wrap table {
+    margin: 0;
+    min-width: 520px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.prose table caption {
+    caption-side: bottom;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.8125rem;
+    color: #78716c;
+    font-style: italic;
+    text-align: left;
+    background-color: #faf8f5;
+    border-top: 1px solid #efebe4;
+}
+
+.prose table thead {
+    background-color: #f6f4f0;
+}
+
+.prose table th {
+    padding: 0.875rem 1.25rem;
+    font-family: 'Fraunces', serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #1c1917;
+    text-align: left;
+    border-bottom: 2.5px solid #2A5C43;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.prose table th:not(:last-child),
+.prose table td:not(:last-child) {
+    border-right: 1px solid #efebe4;
+}
+
+.prose table tbody tr {
+    transition: background-color 0.15s ease-in-out;
+}
+
+.prose table tbody tr:nth-child(even) {
+    background-color: #faf8f5;
+}
+
+.prose table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.prose table tbody tr:hover {
+    background-color: rgba(42, 92, 67, 0.05);
+}
+
+.prose table td {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9375rem;
+    color: #2A2724;
+    border-bottom: 1px solid #efebe4;
+    vertical-align: top;
+}
+
+.prose table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.prose table tfoot {
+    background-color: #f6f4f0;
+    font-weight: 600;
+}
+
+.prose table tfoot td {
+    border-top: 2px solid #e7e5e4;
+    border-bottom: none;
+    font-weight: 600;
+    color: #1c1917;
+}
+
+.prose-table-wrap::-webkit-scrollbar,
+.prose>table::-webkit-scrollbar {
+    height: 6px;
+}
+
+.prose-table-wrap::-webkit-scrollbar-track,
+.prose>table::-webkit-scrollbar-track {
+    background: #f6f4f0;
+    border-radius: 9999px;
+}
+
+.prose-table-wrap::-webkit-scrollbar-thumb,
+.prose>table::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 9999px;
+}
+
+.prose-table-wrap::-webkit-scrollbar-thumb:hover,
+.prose>table::-webkit-scrollbar-thumb:hover {
+    background: #2A5C43;
+}
