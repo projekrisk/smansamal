@@ -3,9 +3,11 @@
 namespace Tests\Feature\Auth;
 
 use App\Models\User;
+use App\Notifications\VerifyEmailNotification;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\URL;
 use Tests\TestCase;
 
@@ -54,5 +56,41 @@ class EmailVerificationTest extends TestCase
         $this->actingAs($user)->get($verificationUrl);
 
         $this->assertFalse($user->fresh()->hasVerifiedEmail());
+    }
+
+    public function test_custom_verification_email_notification_can_be_sent(): void
+    {
+        Notification::fake();
+
+        $user = User::factory()->unverified()->create([
+            'name' => 'Ahmad Fauzi',
+            'email' => 'ahmad@example.com',
+        ]);
+
+        $user->sendEmailVerificationNotification();
+
+        Notification::assertSentTo($user, VerifyEmailNotification::class);
+    }
+
+    public function test_custom_verification_email_content_renders_branded_view(): void
+    {
+        $user = User::factory()->unverified()->create([
+            'name' => 'Siti Rahmawati',
+            'email' => 'siti@example.com',
+            'role_type' => 'siswa',
+        ]);
+
+        $notification = new VerifyEmailNotification;
+        $mail = $notification->toMail($user);
+
+        $this->assertEquals('Verifikasi Alamat Email - SMAN 1 Malingping', $mail->subject);
+        $this->assertEquals('emails.verify-email', $mail->view);
+
+        $rendered = $mail->render();
+        $this->assertStringContainsString('SMAN 1', $rendered);
+        $this->assertStringContainsString('Malingping', $rendered);
+        $this->assertStringContainsString('Siti Rahmawati', $rendered);
+        $this->assertStringContainsString('Verifikasi Alamat Email Anda', $rendered);
+        $this->assertStringContainsString('Cageur, Bageur, Bener, Pinter', $rendered);
     }
 }
