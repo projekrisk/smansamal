@@ -134,7 +134,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return match ($this->role_type) {
             'siswa' => ['label' => 'Siswa Aktif', 'class' => 'bg-forest/10 text-forest'],
-            'guru' => ['label' => 'Guru', 'class' => 'bg-stone-800 text-white'],
+            'guru' => ['label' => 'Guru / Staf', 'class' => 'bg-stone-800 text-white'],
             'alumni' => ['label' => 'Alumni', 'class' => 'bg-terracotta/10 text-terracotta'],
             'admin' => ['label' => 'Admin Sekolah', 'class' => 'bg-forest text-white'],
             'super_admin' => ['label' => 'Super Admin', 'class' => 'bg-stone-900 text-white'],
@@ -146,11 +146,26 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return match ($this->role_type) {
             'siswa' => $this->kelas ? "Kelas {$this->kelas}" : 'Siswa SMAN 1 Malingping',
-            'guru' => $this->mata_pelajaran ? "Guru {$this->mata_pelajaran}" : 'Pendidik',
+            'guru' => $this->formatGuruStaffDetail(),
             'alumni' => $this->tahun_lulus ? "Alumni Angkatan {$this->tahun_lulus}" : 'Alumni SMAN 1 Malingping',
             'admin', 'super_admin' => 'Pengelola Portal',
             default => 'Warga SMAN 1 Malingping',
         };
+    }
+
+    protected function formatGuruStaffDetail(): string
+    {
+        if (empty($this->mata_pelajaran)) {
+            return 'Guru / Staf Pegawai';
+        }
+
+        $val = trim($this->mata_pelajaran);
+
+        if (preg_match('/^(guru|staf|staff|pegawai|tenaga|kepala|tata usaha|tu|laboran|pustakawan)/i', $val)) {
+            return $val;
+        }
+
+        return "Guru {$val}";
     }
 
     public function getTotalLikesAttribute(): int

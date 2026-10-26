@@ -292,9 +292,9 @@
                                 </div>
                             </label>
                             <label class="cursor-pointer">
-                                <input type="radio" name="role_type" value="guru" class="peer sr-only" {{ old('role_type') === 'guru' ? 'checked' : '' }} onchange="updateRegisterFields()">
-                                <div class="text-center py-2.5 rounded-xl border border-stone-200 bg-white font-sans text-sm font-semibold text-stone-500 peer-checked:border-terracotta peer-checked:bg-terracotta/5 peer-checked:text-terracotta transition-all">
-                                    Guru
+                                <input type="radio" name="role_type" value="guru" class="peer sr-only" {{ in_array(old('role_type'), ['guru', 'staf', 'pegawai']) ? 'checked' : '' }} onchange="updateRegisterFields()">
+                                <div class="text-center py-2.5 rounded-xl border border-stone-200 bg-white font-sans text-xs sm:text-sm font-semibold text-stone-500 peer-checked:border-terracotta peer-checked:bg-terracotta/5 peer-checked:text-terracotta transition-all flex items-center justify-center min-h-[42px] px-1">
+                                    Guru / Staf
                                 </div>
                             </label>
                             <label class="cursor-pointer">
@@ -437,16 +437,17 @@
 
         function getFieldsGuru() {
             return `
-                <div class="grid grid-cols-2 gap-3.5 fade-in w-full">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 fade-in w-full">
                     <div>
-                        <label class="block font-sans text-sm font-semibold text-stone-700 mb-1.5">NIP (Opsional)</label>
-                        <input type="number" name="nip" value="${oldNip}" placeholder="Nomor Pegawai" class="form-input text-sm">
+                        <label class="block font-sans text-sm font-semibold text-stone-700 mb-1.5">NIP / NUPTK (Opsional)</label>
+                        <input type="text" name="nip" value="${oldNip}" placeholder="Nomor Pegawai / NIP" class="form-input text-sm">
                     </div>
                     <div>
-                        <label class="block font-sans text-sm font-semibold text-stone-700 mb-1.5">Mata Pelajaran</label>
-                        <input type="text" name="mata_pelajaran" value="${oldMataPelajaran}" placeholder="Cth: Biologi" class="form-input text-sm" required>
+                        <label class="block font-sans text-sm font-semibold text-stone-700 mb-1.5">Mapel / Bidang Tugas</label>
+                        <input type="text" name="mata_pelajaran" value="${oldMataPelajaran}" placeholder="Cth: Biologi / Tata Usaha / IT" class="form-input text-sm" required>
                     </div>
                 </div>
+                <p class="text-[11px] text-stone-500 mt-2">Untuk Guru: isi mata pelajaran. Untuk Staf/Pegawai: isi bidang tugas atau unit kerja.</p>
             `;
         }
 
@@ -483,7 +484,7 @@
             setTimeout(() => {
                 if (selectedRole === 'siswa') {
                     dynamicContainer.innerHTML = getFieldsSiswa();
-                } else if (selectedRole === 'guru') {
+                } else if (['guru', 'staf', 'pegawai'].includes(selectedRole)) {
                     dynamicContainer.innerHTML = getFieldsGuru();
                 } else if (selectedRole === 'alumni') {
                     dynamicContainer.innerHTML = getFieldsAlumni();

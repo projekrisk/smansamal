@@ -23,10 +23,11 @@ class RegisteredUserController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        $roleType = $request->input('role_type', 'siswa');
+        $rawRole = $request->input('role_type', 'siswa');
+        $roleType = in_array($rawRole, ['guru', 'staf', 'pegawai']) ? 'guru' : $rawRole;
 
         $rules = [
-            'role_type' => ['required', Rule::in(['siswa', 'guru', 'alumni'])],
+            'role_type' => ['required', Rule::in(['siswa', 'guru', 'staf', 'pegawai', 'alumni'])],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -43,7 +44,9 @@ class RegisteredUserController extends Controller
             $rules['pekerjaan_kampus'] = ['required', 'string', 'max:150'];
         }
 
-        $validated = $request->validate($rules);
+        $validated = $request->validate($rules, [], [
+            'mata_pelajaran' => 'mata pelajaran / bidang tugas',
+        ]);
 
         $userData = [
             'name' => $validated['name'],

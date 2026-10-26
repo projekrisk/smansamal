@@ -172,12 +172,12 @@
                         @elseif($user->role_type === 'guru')
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <div>
-                                    <label class="block font-sans text-[11px] font-bold text-stone-600 tracking-wider mb-1">NIP (Opsional)</label>
+                                    <label class="block font-sans text-[11px] font-bold text-stone-600 tracking-wider mb-1">NIP / NUPTK (Opsional)</label>
                                     <input type="text" name="nip" value="{{ old('nip', $user->nip) }}" placeholder="1982..." class="form-input text-sm sm:text-sm py-1.5">
                                 </div>
                                 <div>
-                                    <label class="block font-sans text-[11px] font-bold text-stone-600 tracking-wider mb-1">Mata Pelajaran</label>
-                                    <input type="text" name="mata_pelajaran" value="{{ old('mata_pelajaran', $user->mata_pelajaran) }}" placeholder="Biologi" class="form-input text-sm sm:text-sm py-1.5">
+                                    <label class="block font-sans text-[11px] font-bold text-stone-600 tracking-wider mb-1">Mata Pelajaran / Bidang Tugas</label>
+                                    <input type="text" name="mata_pelajaran" value="{{ old('mata_pelajaran', $user->mata_pelajaran) }}" placeholder="Cth: Biologi / Tata Usaha / IT" class="form-input text-sm sm:text-sm py-1.5">
                                 </div>
                             </div>
                         @elseif($user->role_type === 'alumni')

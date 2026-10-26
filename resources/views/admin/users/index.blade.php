@@ -16,7 +16,7 @@
                 Siswa
             </a>
             <a href="{{ route('admin.users.index', ['role' => 'guru']) }}" class="px-3.5 py-1.5 rounded-lg transition-colors {{ ($role === 'guru') ? 'bg-forest text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200' }}">
-                Guru
+                Guru / Staf
             </a>
             <a href="{{ route('admin.users.index', ['role' => 'alumni']) }}" class="px-3.5 py-1.5 rounded-lg transition-colors {{ ($role === 'alumni') ? 'bg-forest text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200' }}">
                 Alumni
@@ -132,7 +132,7 @@
                                     @if($user->role_type === 'siswa')
                                         NISN: {{ $user->nisn ?: '-' }} &bull; Kelas: {{ $user->kelas ?: '-' }}
                                     @elseif($user->role_type === 'guru')
-                                        NIP: {{ $user->nip ?: '-' }} &bull; Mapel: {{ $user->mata_pelajaran ?: '-' }}
+                                        NIP: {{ $user->nip ?: '-' }} &bull; Tugas/Mapel: {{ $user->mata_pelajaran ?: '-' }}
                                     @elseif($user->role_type === 'alumni')
                                         Lulus: {{ $user->tahun_lulus ?: '-' }}
                                     @else
@@ -294,7 +294,7 @@
                                     <span class="text-stone-400">Kelas: {{ $user->kelas ?: '-' }}</span>
                                 @elseif($user->role_type === 'guru')
                                     <span>NIP: {{ $user->nip ?: '-' }}</span> &bull;
-                                    <span class="text-stone-400">Mapel: {{ $user->mata_pelajaran ?: '-' }}</span>
+                                    <span class="text-stone-400">Tugas/Mapel: {{ $user->mata_pelajaran ?: '-' }}</span>
                                 @elseif($user->role_type === 'alumni')
                                     <span>Lulus: {{ $user->tahun_lulus ?: '-' }}</span>
                                 @else
@@ -524,7 +524,7 @@
                     </label>
                     <select id="edit_role_type" name="role_type" onchange="handleRoleChange(this.value)" class="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-sm focus:border-forest outline-none font-medium bg-stone-50 focus:bg-white">
                         <option value="siswa">Siswa Aktif</option>
-                        <option value="guru">Guru / Tenaga Pendidik</option>
+                        <option value="guru">Guru / Staf Pegawai</option>
                         <option value="alumni">Alumni SMAN 1 Malingping</option>
                         <option value="admin">Administrator</option>
                         @if(auth()->user()->isSuperAdmin())
@@ -550,8 +550,8 @@
                         <input type="text" id="edit_nip" name="nip" placeholder="198001..." class="w-full px-3 py-1.5 rounded-lg border border-stone-200 text-sm bg-white outline-none font-mono">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-stone-600 tracking-wider mb-1">Mata Pelajaran</label>
-                        <input type="text" id="edit_mata_pelajaran" name="mata_pelajaran" placeholder="Matematika / Fisika..." class="w-full px-3 py-1.5 rounded-lg border border-stone-200 text-sm bg-white outline-none">
+                        <label class="block text-xs font-bold text-stone-600 tracking-wider mb-1">Mata Pelajaran / Bidang Tugas</label>
+                        <input type="text" id="edit_mata_pelajaran" name="mata_pelajaran" placeholder="Biologi / Tata Usaha / IT..." class="w-full px-3 py-1.5 rounded-lg border border-stone-200 text-sm bg-white outline-none">
                     </div>
                 </div>
 
@@ -660,7 +660,7 @@
                 idSection.classList.remove('hidden');
                 document.getElementById('detail_id_label_1').innerText = 'NIP';
                 document.getElementById('detail_id_val_1').innerText = user.nip || '-';
-                document.getElementById('detail_id_label_2').innerText = 'Mata Pelajaran';
+                document.getElementById('detail_id_label_2').innerText = 'Tugas / Mapel';
                 document.getElementById('detail_id_val_2').innerText = user.mata_pelajaran || '-';
             } else if (user.role_type === 'alumni') {
                 idSection.classList.remove('hidden');
