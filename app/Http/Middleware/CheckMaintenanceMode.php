@@ -60,11 +60,18 @@ class CheckMaintenanceMode
 
     public function handle(Request $request, Closure $next): Response
     {
-        if (! static::isMaintenanceActive()) {
+        $isMaintenance = static::isMaintenanceActive();
+
+        if (! $isMaintenance) {
+            // When maintenance is off, visiting /pemeliharaan directly redirects to home (unless admin)
+            if (($request->is('pemeliharaan') || $request->is('pemeliharan')) && ! ($request->user() && $request->user()->isAdmin())) {
+                return redirect()->route('home');
+            }
+
             return $next($request);
         }
 
-        // Exempt critical system paths (admin panel, auth, health check, favicon)
+        // Exempt critical system paths (admin panel, auth, health check, favicon, /pemeliharaan page itself)
         if ($this->isExemptPath($request)) {
             return $next($request);
         }
@@ -99,9 +106,7 @@ class CheckMaintenanceMode
             ], 503);
         }
 
-        return response()
-            ->view('maintenance', $data, 503)
-            ->header('Retry-After', '3600');
+        return redirect()->to('/pemeliharaan');
     }
 
     protected function isExemptPath(Request $request): bool
@@ -110,6 +115,8 @@ class CheckMaintenanceMode
             || $request->is('login')
             || $request->is('logout')
             || $request->is('up')
-            || $request->is('icon.png');
+            || $request->is('icon.png')
+            || $request->is('pemeliharaan')
+            || $request->is('pemeliharan');
     }
 }

@@ -52,6 +52,8 @@ Route::get('/panduan-suara-warga', [HomeController::class, 'panduanSuaraWarga'])
 Route::get('/sop', [HomeController::class, 'sop'])->name('sop');
 Route::redirect('/standar-pelayanan', '/sop', 301);
 Route::redirect('/standar-operasional-pelayanan', '/sop', 301);
+Route::get('/pemeliharaan', [MaintenanceSettingController::class, 'showPublicMaintenance'])->name('maintenance.show');
+Route::redirect('/pemeliharan', '/pemeliharaan', 301);
 Route::get('/api/pengumuman-aktif', [HomeController::class, 'activeAnnouncement'])->name('announcements.active');
 Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('sitemap');
 Route::get('/icon.png', function () {
@@ -187,5 +189,5 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 require __DIR__.'/auth.php';
 
 Route::get('/{slug}', [PageController::class, 'show'])
-    ->where('slug', '^(?!(admin|warga|dashboard|login|logout|register|password|verify-email|confirm-password|forgot-password|reset-password|berita|artikel|suara-warga|jurnal|testimoni|profil-sekolah|kontak|syarat-ketentuan|kebijakan-privasi|pedoman-komunitas|panduan-suara-warga|sitemap|sitemap\.xml|icon|icon\.png|notifikasi|profile|pengaturan-iklan|storage|up|api|pengumuman)$).*$')
+    ->where('slug', '^(?!(admin|warga|dashboard|login|logout|register|password|verify-email|confirm-password|forgot-password|reset-password|berita|artikel|suara-warga|jurnal|testimoni|profil-sekolah|kontak|syarat-ketentuan|kebijakan-privasi|pedoman-komunitas|panduan-suara-warga|sitemap|sitemap\.xml|icon|icon\.png|notifikasi|profile|pengaturan-iklan|pengaturan-pemeliharaan|pemeliharaan|pemeliharan|storage|up|api|pengumuman)$).*$')
     ->name('pages.show');

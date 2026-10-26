@@ -54,10 +54,10 @@ class DatabaseSeeder extends Seeder
         $superAdmin = User::firstOrCreate(
             ['email' => 'superadmin@sman1malingping.sch.id'],
             [
-                'name' => 'Kepala Sekolah SMAN 1 Malingping',
+                'name' => 'Super Admin',
                 'password' => Hash::make('password'),
                 'role_type' => 'super_admin',
-                'bio' => 'Kepala SMAN 1 Malingping. Berkomitmen mewujudkan sekolah berwawasan lingkungan dan generasi cerdas berkarakter.',
+                'bio' => 'Super Admin Sekolah',
                 'avatar' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop',
                 'is_active' => true,
                 'activated_at' => now(),
@@ -69,12 +69,12 @@ class DatabaseSeeder extends Seeder
         $admin = User::firstOrCreate(
             ['email' => 'admin@sman1malingping.sch.id'],
             [
-                'name' => 'Budi Santoso, S.Pd.',
+                'name' => 'Administrator',
                 'password' => Hash::make('password'),
                 'role_type' => 'admin',
                 'nip' => '198204152009021003',
                 'mata_pelajaran' => 'Biologi & Humas Sekolah',
-                'bio' => 'Mengabdi sejak tahun 2015, berfokus pada pendidikan lingkungan dan ekologi kelautan. Aktif membimbing siswa dalam karya ilmiah remaja dan kegiatan olimpiade sains tingkat provinsi maupun nasional.',
+                'bio' => 'Administrator Sekolah',
                 'avatar' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
                 'is_active' => true,
                 'activated_at' => now(),

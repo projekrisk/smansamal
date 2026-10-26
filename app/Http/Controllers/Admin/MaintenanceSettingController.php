@@ -7,6 +7,7 @@ use App\Http\Middleware\CheckMaintenanceMode;
 use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class MaintenanceSettingController extends Controller
@@ -69,5 +70,21 @@ class MaintenanceSettingController extends Controller
         $data = CheckMaintenanceMode::getMaintenanceData();
 
         return view('maintenance', $data);
+    }
+
+    /**
+     * Display the public maintenance page (/pemeliharaan).
+     */
+    public function showPublicMaintenance(): Response|RedirectResponse
+    {
+        if (! CheckMaintenanceMode::isMaintenanceActive() && ! (auth()->check() && auth()->user()->isAdmin())) {
+            return redirect()->route('home');
+        }
+
+        $data = CheckMaintenanceMode::getMaintenanceData();
+
+        return response()
+            ->view('maintenance', $data, 503)
+            ->header('Retry-After', '3600');
     }
 }
