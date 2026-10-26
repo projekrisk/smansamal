@@ -45,7 +45,7 @@
                     <span class="inline-block w-2.5 h-2.5 rounded-full bg-stone-950 animate-ping"></span>
                     <span><strong>Mode Pemeliharaan Aktif:</strong> Pengunjung umum saat ini dialihkan ke halaman pemeliharaan. Anda dapat mengakses halaman ini sebagai Administrator.</span>
                 </div>
-                <a href="{{ route('admin.maintenance.index') }}" class="underline font-bold hover:text-white transition-colors flex-shrink-0">
+                <a href="{{ \Illuminate\Support\Facades\Route::has('admin.maintenance.index') ? route('admin.maintenance.index') : url('admin/pengaturan-pemeliharaan') }}" class="underline font-bold hover:text-white transition-colors flex-shrink-0">
                     Pengaturan Mode Pemeliharaan &rarr;
                 </a>
             </div>
