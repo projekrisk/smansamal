@@ -121,7 +121,7 @@
                 </p>
                 <ul>
                     <li>Mengkritisi pokok gagasan atau argumen artikel, <strong>bukan menyerang pribadi penulis</strong>.</li>
-                    <li>Menghindari penggunaan kata-kata kasar, makian, huruf kapital berlebih (*shouting*), atau spam tautan promosi.</li>
+                    <li>Menghindari penggunaan kata-kata kasar, makian, huruf kapital berlebih (<i>shouting</i>), atau spam tautan promosi.</li>
                     <li>Memberikan tanggapan yang relevan dengan topik bahasan artikel.</li>
                 </ul>
 
@@ -136,9 +136,9 @@
                 </p>
                 <ol>
                     <li><strong>Pemberitahuan & Permintaan Revisi:</strong> Penulis diminta memperbaiki bagian yang tidak sesuai.</li>
-                    <li><strong>Penarikan Artikel (*Take-down*):</strong> Mengubah status artikel dari *published* menjadi *draft* sehingga tidak lagi tayang publik.</li>
+                    <li><strong>Penarikan Artikel (<i>Take-down</i>):</strong> Mengubah status artikel dari <i>published</i> menjadi <i>draft</i> sehingga tidak lagi tayang publik.</li>
                     <li><strong>Penghapusan Konten:</strong> Konten atau komentar melanggar dihapus secara permanen dari basis data.</li>
-                    <li><strong>Penonaktifan Akun (*Suspension*):</strong> Penonaktifan sementara atau pembekuan akun warga secara permanen jika melakukan pelanggaran berat berulang.</li>
+                    <li><strong>Penonaktifan Akun (<i>Suspension</i>):</strong> Penonaktifan sementara atau pembekuan akun warga secara permanen jika melakukan pelanggaran berat berulang.</li>
                 </ol>
 
                 <h2>6. Bantuan & Panduan Teknis</h2>
@@ -155,17 +155,6 @@
                             </div>
                         </div>
                         <svg class="w-5 h-5 text-stone-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="mt-14 pt-6 border-t border-stone-200/70 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-stone-500">
-                <p>&copy; {{ date('Y') }} SMAN 1 Malingping &bull; Pedoman Komunitas Resmi</p>
-                <div class="flex items-center gap-4">
-                    <a href="{{ route('panduan-suara-warga') }}" class="font-semibold text-stone-700 hover:text-forest transition-colors">Panduan Penulisan &rarr;</a>
-                    <a href="{{ route('home') }}" class="font-semibold text-forest hover:text-terracotta transition-colors flex items-center gap-1.5">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                        Kembali ke Beranda
                     </a>
                 </div>
             </div>

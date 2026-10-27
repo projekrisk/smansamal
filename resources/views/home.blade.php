@@ -447,7 +447,7 @@
 
             <div class="mt-8 sm:mt-10 text-center">
                 <a href="{{ route('sop') }}" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-forest text-white text-xs sm:text-sm font-semibold hover:bg-stone-900 transition-colors shadow-sm">
-                    <span>Lihat Standar Operasional Pelayanan (SOP) Lengkap</span>
+                    <span>Lihat Standar Operasional Pelayanan</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
             </div>

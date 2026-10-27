@@ -92,7 +92,7 @@
                     </div>
 
                     <h1 class="font-serif text-2xl sm:text-3xl md:text-4xl text-stone-900 leading-tight mb-1">
-                        SMA Negeri 1 Malingping
+                        SMAN 1 Malingping
                     </h1>
 
                     <p class="font-sans text-stone-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl">
@@ -555,7 +555,7 @@
                                 </tr>
                                 <tr class="bg-forest/5 hover:bg-forest/10 transition-colors">
                                     <td class="py-3 px-3 sm:px-4 text-center font-bold text-forest">19</td>
-                                    <td class="py-3 px-3 sm:px-4 font-bold text-forest">Zeni Januar Pamungkas, S.Si, M.Pd.</td>
+                                    <td class="py-3 px-3 sm:px-4 font-bold text-forest">Zeni Januar Pamungkas, S.Si, M.Pd. (Plt)</td>
                                     <td class="py-3 px-3 sm:px-4 text-center whitespace-nowrap font-semibold">2026</td>
                                     <td class="py-3 px-3 sm:px-4 text-center whitespace-nowrap font-bold text-forest">Sekarang</td>
                                     <td class="py-3 px-3 sm:px-4 text-center">
@@ -741,12 +741,12 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
                         <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
                             <h4 class="font-serif text-base font-bold text-stone-900 mb-1">Laboratorium Komputer</h4>
-                            <p class="text-stone-600 text-xs leading-relaxed">Dilengkapi puluhan PC spesifikasi tinggi dan koneksi internet serat optik berkecepatan tinggi untuk asesmen digital.</p>
+                            <p class="text-stone-600 text-xs leading-relaxed">Dilengkapi puluhan PC dan koneksi internet serat optik berkecepatan tinggi untuk asesmen digital.</p>
                         </div>
 
                         <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
                             <h4 class="font-serif text-base font-bold text-stone-900 mb-1">Laboratorium Sains Lengkap</h4>
-                            <p class="text-stone-600 text-xs leading-relaxed">Laboratorium Fisika, Kimia, dan Biologi dengan instrumen praktikum terstandar dan mikroskop digital.</p>
+                            <p class="text-stone-600 text-xs leading-relaxed">Laboratorium Fisika, Kimia, dan Biologi dengan instrumen praktikum terstandarl.</p>
                         </div>
 
                         <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
@@ -760,13 +760,13 @@
                         </div>
 
                         <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
-                            <h4 class="font-serif text-base font-bold text-stone-900 mb-1">Masjid Baitul Ilmi</h4>
+                            <h4 class="font-serif text-base font-bold text-stone-900 mb-1">Masjid</h4>
                             <p class="text-stone-600 text-xs leading-relaxed">Pusat pembinaan keagamaan, shalat berjamaah, dan kegiatan kerohanian Islam seluruh civitas akademika.</p>
                         </div>
 
                         <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
-                            <h4 class="font-serif text-base font-bold text-stone-900 mb-1">Taman Konservasi Adiwiyata</h4>
-                            <p class="text-stone-600 text-xs leading-relaxed">Area asri pepohonan rindang, kebun toga, dan green house sebagai media pembelajaran lingkungan hidup.</p>
+                            <h4 class="font-serif text-base font-bold text-stone-900 mb-1">Aula Pertemuan</h4>
+                            <p class="text-stone-600 text-xs leading-relaxed">Ruang pertemuan yang dilengkapi dengan sound system dan proyektor untuk kegiatan akademik dan kegiatan sekolah lainnya.</p>
                         </div>
                     </div>
                 </div>
@@ -786,18 +786,8 @@
                             <div>
                                 <strong class="font-sans text-stone-900 block text-sm sm:text-base">Alamat Sekolah:</strong>
                                 <p class="text-stone-700 leading-relaxed">
-                                    Jln. Raya Bayah KM. 4 No. 39, Desa Pagelaran Kecamatan Malingping, Kabupaten Lebak, Banten 42391.
+                                    Jln. Raya Bayah KM. 4 No. 39, Kecamatan Malingping, Kabupaten Lebak, Banten 42391.
                                 </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <span class="w-8 h-8 rounded-lg bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            </span>
-                            <div>
-                                <strong class="font-sans text-stone-900 block text-sm sm:text-base">Telepon Kantor:</strong>
-                                <p class="text-stone-700 leading-relaxed">(0252) 508123</p>
                             </div>
                         </div>
 
@@ -831,19 +821,15 @@
                                 class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-forest text-white font-sans text-xs sm:text-sm font-semibold hover:bg-stone-900 transition-colors shadow-2xs"
                             >
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                <span>Buka di Google Maps</span>
+                                <span>Google Maps</span>
                             </a>
                             <a
                                 href="{{ route('contact') }}"
                                 class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-stone-300 text-stone-700 hover:text-forest hover:border-forest font-sans text-xs sm:text-sm font-semibold transition-colors"
                             >
-                                <span>Halaman Kontak Lengkap &rarr;</span>
+                                <span>Halaman Kontak</span>
                             </a>
                         </div>
-
-                        <a href="{{ route('home') }}" class="font-sans text-xs sm:text-sm font-semibold text-stone-600 hover:text-stone-900 transition-colors">
-                            Kembali ke Beranda
-                        </a>
                     </div>
                 </div>
 
