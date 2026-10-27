@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Services\ImageOptimizerService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function showPublic(string $username): View|RedirectResponse
+    public function showPublic(string $username, Request $request): View|RedirectResponse|JsonResponse
     {
 
         if (is_numeric($username)) {
@@ -32,6 +33,23 @@ class ProfileController extends Controller
             ->published()
             ->latest('published_at')
             ->paginate(6);
+
+        if ($request->ajax() || $request->has('load_more')) {
+            $html = '';
+            foreach ($articles as $article) {
+                $html .= view('profile.partials.article-card', [
+                    'article' => $article,
+                    'user' => $user,
+                ])->render();
+            }
+
+            return response()->json([
+                'html' => $html,
+                'next_page_url' => $articles->nextPageUrl(),
+                'has_more' => $articles->hasMorePages(),
+                'total' => $articles->total(),
+            ]);
+        }
 
         $totalLikes = (int) $user->articles()->published()->sum('likes_count');
         $totalViews = (int) $user->articles()->published()->sum('views_count');

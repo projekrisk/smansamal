@@ -824,4 +824,35 @@ class PortalTest extends TestCase
         $adminSuaraWargaResponse->assertSee('Pratinjau Khusus');
         $adminSuaraWargaResponse->assertSee('DRAF');
     }
+
+    public function test_warga_profile_paginates_6_and_has_load_more_button(): void
+    {
+        $cat = Category::create(['name' => 'Karya Profil', 'slug' => 'karya-profil', 'type' => 'both']);
+        $user = User::factory()->create(['username' => 'penulis-handal']);
+
+        for ($i = 1; $i <= 7; $i++) {
+            Article::create([
+                'user_id' => $user->id,
+                'category_id' => $cat->id,
+                'type' => 'suara_warga',
+                'title' => 'Karya Penulis Ke-'.$i,
+                'slug' => 'karya-penulis-ke-'.$i,
+                'content' => '<p>Konten artikel penulis '.$i.'</p>',
+                'status' => 'published',
+                'published_at' => now()->subMinutes(10 - $i),
+            ]);
+        }
+
+        $response = $this->get('/warga/penulis-handal');
+        $response->assertStatus(200);
+        $response->assertSee('Muat Lainnya');
+        $response->assertSee('Karya Penulis Ke-7');
+        $response->assertDontSee('Karya Penulis Ke-1');
+
+        $ajaxResponse = $this->get('/warga/penulis-handal?page=2', ['X-Requested-With' => 'XMLHttpRequest']);
+        $ajaxResponse->assertStatus(200);
+        $ajaxResponse->assertJsonStructure(['html', 'next_page_url', 'has_more', 'total']);
+        $this->assertFalse($ajaxResponse->json('has_more'));
+        $this->assertStringContainsString('Karya Penulis Ke-1', $ajaxResponse->json('html'));
+    }
 }
