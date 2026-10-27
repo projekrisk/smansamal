@@ -319,3 +319,8 @@
 .prose>table::-webkit-scrollbar-thumb:hover {
     background: #2A5C43;
 }
+
+/* Google AdSense: Sembunyikan kontainer jika iklan kosong (unfilled) */
+.ad-container:has(ins.adsbygoogle[data-ad-status="unfilled"]) {
+    display: none !important;
+}

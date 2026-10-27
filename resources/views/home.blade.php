@@ -170,6 +170,7 @@
         </div>
     </section>
 
+    <!--
     <section id="agenda" class="w-full bg-forest text-white py-16 sm:py-20 md:py-28 flex justify-center relative scroll-mt-12">
         <div class="w-full max-w-[1000px] px-4 sm:px-6">
             <div class="text-center mb-8 sm:mb-12 md:mb-14">
@@ -251,6 +252,7 @@
             </div>
         </div>
     </section>
+-->
 
     <section id="alumni" class="w-full bg-white py-16 sm:py-20 md:py-28 flex justify-center border-b border-stone-200/50 scroll-mt-12">
         <div class="w-full max-w-[1000px] px-4 sm:px-6 relative">
@@ -415,7 +417,7 @@
                     </button>
                     <div class="faq-content grid transition-all duration-500 ease-in-out" style="grid-template-rows: 0fr; opacity: 0;">
                         <div class="overflow-hidden">
-                            <p class="font-sans text-stone-600 text-xs sm:text-sm md:text-base mt-3 pt-3 border-t border-stone-100 leading-relaxed">Kami memiliki lebih dari 15 kegiatan ekstrakurikuler unggulan, di antaranya: Pramuka, Paskibra, PMR, Karya Ilmiah Remaja (KIR), Rohis, Paduan Suara, Teater, serta berbagai klub olahraga (Basket, Voli, Futsal).</p>
+                            <p class="font-sans text-stone-600 text-xs sm:text-sm md:text-base mt-3 pt-3 border-t border-stone-100 leading-relaxed">Kami memiliki lebih dari 15 kegiatan ekstrakurikuler unggulan, di antaranya: Pramuka, Paskibra, PMR, Karya Ilmiah Remaja (KIR), Rohis, Paduan Suara, Taekwondo, serta berbagai klub olahraga (Basket, Voli, Futsal).</p>
                         </div>
                     </div>
                 </div>
@@ -427,7 +429,7 @@
                     </button>
                     <div class="faq-content grid transition-all duration-500 ease-in-out" style="grid-template-rows: 0fr; opacity: 0;">
                         <div class="overflow-hidden">
-                            <p class="font-sans text-stone-600 text-xs sm:text-sm md:text-base mt-3 pt-3 border-t border-stone-100 leading-relaxed">Ya, kami membantu menyalurkan berbagai program beasiswa seperti PIP (Program Indonesia Pintar) dari pemerintah, serta beasiswa khusus dari komite sekolah dan mitra alumni bagi siswa berprestasi dan kurang mampu.</p>
+                            <p class="font-sans text-stone-600 text-xs sm:text-sm md:text-base mt-3 pt-3 border-t border-stone-100 leading-relaxed">Ya, kami membantu menyalurkan berbagai program beasiswa seperti PIP (Program Indonesia Pintar) dari pemerintah.</p>
                         </div>
                     </div>
                 </div>
@@ -439,7 +441,7 @@
                     </button>
                     <div class="faq-content grid transition-all duration-500 ease-in-out" style="grid-template-rows: 0fr; opacity: 0;">
                         <div class="overflow-hidden">
-                            <p class="font-sans text-stone-600 text-xs sm:text-sm md:text-base mt-3 pt-3 border-t border-stone-100 leading-relaxed">Sekolah dilengkapi dengan CCTV di area strategis, petugas keamanan 24 jam, laboratorium lengkap (Sains, Komputer, Bahasa), perpustakaan digital, serta lapangan olahraga multifungsi untuk mendukung kenyamanan belajar.</p>
+                            <p class="font-sans text-stone-600 text-xs sm:text-sm md:text-base mt-3 pt-3 border-t border-stone-100 leading-relaxed">Sekolah dilengkapi dengan CCTV di area strategis, petugas keamanan 24 jam, laboratorium lengkap (Sains, Komputer), perpustakaan, serta lapangan olahraga multifungsi untuk mendukung kenyamanan belajar.</p>
                         </div>
                     </div>
                 </div>

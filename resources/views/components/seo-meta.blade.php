@@ -6,7 +6,7 @@
     'author' => 'SMAN 1 Malingping',
     'publishedTime' => null,
     'twitterCard' => 'summary_large_image',
-    'keywords' => 'SMAN 1 Malingping, SMA Negeri 1 Malingping, Pagelaran Malingping, Sekolah Menengah Atas Lebak Banten, Berita SMAN 1 Malingping, Suara Warga SMAN 1 Malingping, Pendidikan Lebak, Alumni SMAN 1 Malingping, NPSN 20601836, Cageur Bageur Bener Pinter',
+    'keywords' => 'SMAN 1 Malingping, SMA Negeri 1 Malingping, Pagelaran Malingping, Sekolah Menengah Atas Lebak Banten, Berita SMAN 1 Malingping, Suara Warga SMAN 1 Malingping, Pendidikan Lebak, Alumni SMAN 1 Malingping, NPSN 20601875, Cageur Bageur Bener Pinter',
 ])
 
 @php
@@ -37,7 +37,7 @@
         ],
         'telephone' => '(0252) 508123',
         'email' => 'info@sman1malingping.sch.id',
-        'identifier' => '20601836',
+        'identifier' => '20601875',
         'slogan' => 'Cageur, Bageur, Bener, Pinter.',
     ];
 

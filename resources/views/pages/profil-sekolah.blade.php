@@ -25,7 +25,7 @@
 
 <x-layouts.app
     title="Profil Sekolah - SMAN 1 Malingping"
-    description="Profil lengkap SMAN 1 Malingping: sejarah pendirian, data pokok NPSN 20601836, daftar pimpinan sekolah dari masa ke masa, visi-misi, 4 pilar karakter, ekstrakurikuler, dan fasilitas."
+    description="Profil lengkap SMAN 1 Malingping: sejarah pendirian, data pokok NPSN 20601875, daftar pimpinan sekolah dari masa ke masa, visi-misi, 4 pilar karakter, ekstrakurikuler, dan fasilitas."
     type="article">
 
     <main
@@ -84,7 +84,7 @@
                             Akreditasi A
                         </span>
                         <span class="inline-flex items-center text-[11px] sm:text-xs font-semibold text-stone-700 bg-stone-100 border border-stone-200 px-2.5 py-0.5 rounded-full">
-                            NPSN: 20601836
+                            NPSN: 20601875
                         </span>
                         <span class="inline-flex items-center text-[11px] sm:text-xs font-semibold text-terracotta bg-terracotta/10 border border-terracotta/20 px-2.5 py-0.5 rounded-full">
                             Kurikulum Merdeka
@@ -272,7 +272,7 @@
 
                         <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">
                             <span class="font-sans text-[11px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Nomor Pokok Sekolah Nasional (NPSN)</span>
-                            <span class="font-sans text-sm sm:text-base font-bold text-forest">20601836</span>
+                            <span class="font-sans text-sm sm:text-base font-bold text-forest">20601875</span>
                         </div>
 
                         <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-2xs">

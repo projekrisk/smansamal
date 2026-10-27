@@ -610,7 +610,7 @@ class PortalTest extends TestCase
         $response->assertSee('images/og-default.jpg');
         $response->assertSee('Cageur, Bageur, Bener, Pinter');
         $response->assertSee('EducationalOrganization');
-        $response->assertSee('20601836');
+        $response->assertSee('20601875');
     }
 
     public function test_seo_fallback_image_and_schema_on_article(): void

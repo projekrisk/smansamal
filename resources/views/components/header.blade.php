@@ -18,7 +18,7 @@
             <a href="{{ route('sop') }}" class="{{ request()->routeIs('sop') ? 'text-forest font-semibold' : 'hover:text-forest' }} transition-colors">SOP</a>
             <a href="{{ route('home') }}#news" class="{{ (request()->routeIs('berita.*') || request()->routeIs('jurnal.*')) ? 'text-forest font-semibold' : 'hover:text-forest' }} transition-colors">Berita</a>
             <a href="{{ route('home') }}#artikel" class="{{ request()->routeIs('suara-warga.*') ? 'text-forest font-semibold' : 'hover:text-forest' }} transition-colors">Suara Warga</a>
-            <a href="{{ route('home') }}#agenda" class="hover:text-forest transition-colors">Agenda</a>
+            <a href="{{ route('home') }}#alumni" class="mobile-link hover:text-forest transition-colors">Alumni</a>
         </nav>
 
         <div class="hidden lg:flex items-center gap-3">
@@ -211,7 +211,6 @@
         <a href="{{ route('sop') }}" class="mobile-link hover:text-forest transition-colors">SOP Pelayanan</a>
         <a href="{{ route('home') }}#berita" class="mobile-link hover:text-forest transition-colors">Berita</a>
         <a href="{{ route('home') }}#suara-warga" class="mobile-link hover:text-forest transition-colors">Suara Warga</a>
-        <a href="{{ route('home') }}#agenda" class="mobile-link hover:text-forest transition-colors">Agenda</a>
         <a href="{{ route('home') }}#alumni" class="mobile-link hover:text-forest transition-colors">Alumni</a>
         <hr class="border-stone-200">
         @auth
