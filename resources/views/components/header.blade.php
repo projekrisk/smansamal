@@ -209,8 +209,8 @@
         <a href="{{ route('home') }}" class="mobile-link hover:text-forest transition-colors">Beranda</a>
         <a href="{{ route('profil-sekolah') }}" class="mobile-link hover:text-forest transition-colors">Profil Sekolah</a>
         <a href="{{ route('sop') }}" class="mobile-link hover:text-forest transition-colors">SOP Pelayanan</a>
-        <a href="{{ route('home') }}#berita" class="mobile-link hover:text-forest transition-colors">Berita</a>
-        <a href="{{ route('home') }}#suara-warga" class="mobile-link hover:text-forest transition-colors">Suara Warga</a>
+        <a href="{{ route('home') }}#news" class="mobile-link hover:text-forest transition-colors">Berita</a>
+        <a href="{{ route('home') }}#artikel" class="mobile-link hover:text-forest transition-colors">Suara Warga</a>
         <a href="{{ route('home') }}#alumni" class="mobile-link hover:text-forest transition-colors">Alumni</a>
         <hr class="border-stone-200">
         @auth
