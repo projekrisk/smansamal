@@ -57,7 +57,6 @@ class AdminDashboardTest extends TestCase
 
     public function test_admin_can_access_dashboard_with_all_sections(): void
     {
-        // Create pending article
         $pendingArticle = Article::create([
             'user_id' => $this->siswa->id,
             'category_id' => $this->category->id,
@@ -68,7 +67,6 @@ class AdminDashboardTest extends TestCase
             'status' => 'pending_review',
         ]);
 
-        // Create published jurnal article
         $jurnalArticle = Article::create([
             'user_id' => $this->admin->id,
             'category_id' => $this->category->id,
@@ -80,7 +78,6 @@ class AdminDashboardTest extends TestCase
             'published_at' => now(),
         ]);
 
-        // Create pending comment
         $comment = Comment::create([
             'article_id' => $jurnalArticle->id,
             'author_name' => 'Pengunjung Luar',
@@ -131,13 +128,11 @@ class AdminDashboardTest extends TestCase
 
     public function test_admin_can_manage_categories(): void
     {
-        // View categories
         $viewResponse = $this->actingAs($this->admin)->get(route('admin.categories.index'));
         $viewResponse->assertStatus(200);
         $viewResponse->assertSee('Kategori Konten');
         $viewResponse->assertSee('Opini Siswa');
 
-        // Create new category
         $createResponse = $this->actingAs($this->admin)->post(route('admin.categories.store'), [
             'name' => 'Kategori Baru Pengumuman',
             'type' => 'jurnal',
@@ -149,7 +144,6 @@ class AdminDashboardTest extends TestCase
 
         $category = Category::where('name', 'Kategori Baru Pengumuman')->first();
 
-        // Delete category
         $deleteResponse = $this->actingAs($this->admin)->delete(route('admin.categories.destroy', $category->id));
         $deleteResponse->assertRedirect(route('admin.categories.index'));
         $this->assertDatabaseMissing('categories', ['id' => $category->id]);
@@ -173,7 +167,6 @@ class AdminDashboardTest extends TestCase
         $response = $this->get(route('berita.show', $article->slug));
         $response->assertStatus(200);
         $response->assertSee('Berita Dengan Gambar Penuh');
-        // Check for breakout class
         $response->assertSee('-mx-6 sm:-mx-10 md:-mx-24 lg:-mx-36');
     }
 

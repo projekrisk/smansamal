@@ -19,15 +19,12 @@
 </head>
 <body style="margin: 0; padding: 0; background-color: #F9F8F6; -webkit-font-smoothing: antialiased;">
 
-    <!-- Wrapper Table -->
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F9F8F6; padding: 36px 12px;">
         <tr>
             <td align="center">
 
-                <!-- Main Container (Max 580px) -->
                 <table role="presentation" class="email-container" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 580px; margin: 0 auto;">
 
-                    <!-- Brand Header -->
                     <tr>
                         <td align="center" style="padding-bottom: 24px;">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -52,21 +49,17 @@
                         </td>
                     </tr>
 
-                    <!-- Main Content Card -->
                     <tr>
                         <td>
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border-radius: 20px; border: 1px solid #EBE7E0; box-shadow: 0 4px 16px rgba(42, 39, 36, 0.04); overflow: hidden;">
                                 
-                                <!-- Top Accent Bar (Gradient Forest to Terracotta) -->
                                 <tr>
                                     <td height="6" style="background: linear-gradient(90deg, #2A5C43 0%, #3D8B62 60%, #CC7A6B 100%); line-height: 6px; font-size: 6px;">&nbsp;</td>
                                 </tr>
 
-                                <!-- Card Body -->
                                 <tr>
                                     <td class="card-body" style="padding: 36px 36px 32px 36px;">
 
-                                        <!-- Badge -->
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
                                             <tr>
                                                 <td style="background-color: #EBF3EE; border: 1px solid #D1E5D8; border-radius: 50px; padding: 4px 14px;">
@@ -77,7 +70,6 @@
                                             </tr>
                                         </table>
 
-                                        <!-- Greeting & Title -->
                                         <h1 class="h1-title" style="margin: 0 0 16px 0; font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-size: 26px; line-height: 32px; font-weight: 700; color: #1A1816; letter-spacing: -0.4px;">
                                             Verifikasi Alamat Email Anda
                                         </h1>
@@ -94,7 +86,6 @@
                                             Untuk menjaga keamanan data dan mengaktifkan akun Anda, silakan verifikasi alamat email ini dengan mengeklik tombol di bawah:
                                         </p>
 
-                                        <!-- Verification CTA Button -->
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 28px 0 32px 0;">
                                             <tr>
                                                 <td align="center">
@@ -111,7 +102,6 @@
                                             </tr>
                                         </table>
 
-                                        <!-- Expiry Notice Box -->
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F9F8F6; border: 1px solid #EBE7E0; border-radius: 12px; margin-bottom: 24px;">
                                             <tr>
                                                 <td style="padding: 14px 16px;">
@@ -127,7 +117,6 @@
                                             </tr>
                                         </table>
 
-                                        <!-- Fallback Raw Link -->
                                         <p style="margin: 0 0 8px 0; font-size: 12px; line-height: 18px; color: #8A857F;">
                                             Jika Anda mengalami kesulitan mengeklik tombol di atas, salin dan tempelkan alamat tautan berikut ke peramban (browser) Anda:
                                         </p>
@@ -140,7 +129,6 @@
                                     </td>
                                 </tr>
 
-                                <!-- Card Bottom Motto Banner -->
                                 <tr>
                                     <td style="background-color: #FAF8F5; border-top: 1px solid #EBE7E0; padding: 14px 24px; text-align: center;">
                                         <span style="font-size: 12px; font-weight: 600; color: #2A5C43; letter-spacing: 0.5px;">
@@ -153,7 +141,6 @@
                         </td>
                     </tr>
 
-                    <!-- Footer Info & Disclaimer -->
                     <tr>
                         <td align="center" style="padding-top: 28px; padding-bottom: 12px;">
                             <p style="margin: 0 0 6px 0; font-size: 12px; line-height: 18px; color: #8A857F;">

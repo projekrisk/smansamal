@@ -32,7 +32,6 @@
             </div>
         @endif
 
-        <!-- Current Status Banner -->
         @if($settings['is_currently_active'])
             <div class="mb-6 p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-900 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
                 <div class="flex items-start md:items-center gap-3.5">
@@ -69,10 +68,8 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            <!-- Left / Main Column: Settings Form -->
             <div class="lg:col-span-2 space-y-6">
 
-                <!-- Main Switch Card -->
                 <div class="bg-white rounded-2xl border border-stone-200 shadow-2xs overflow-hidden">
                     <div class="px-5 py-4 border-b border-stone-100 flex items-center justify-between bg-stone-50/70">
                         <div class="flex items-center gap-2.5">
@@ -93,7 +90,6 @@
                     </div>
                 </div>
 
-                <!-- Content Customization Card -->
                 <div class="bg-white rounded-2xl border border-stone-200 shadow-2xs overflow-hidden">
                     <div class="px-5 py-4 border-b border-stone-100 bg-stone-50/70">
                         <h2 class="font-sans font-bold text-sm text-stone-900">Teks & Informasi Halaman Pemeliharaan</h2>
@@ -138,7 +134,6 @@
 
             </div>
 
-            <!-- Right Column: .env Guide & Information -->
             <div class="space-y-6">
 
                 <div class="bg-stone-900 text-stone-200 rounded-2xl border border-stone-800 p-5 shadow-sm">

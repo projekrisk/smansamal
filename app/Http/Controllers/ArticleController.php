@@ -323,24 +323,19 @@ class ArticleController extends Controller
         $user = auth()->user();
         $isAdmin = $user && $user->isAdmin();
 
-        // Artikel yang tidak terbit (status draft, rejected, pending_review, atau jadwal terbit belum tiba)
-        // TIDAK BISA dilihat oleh publik (tamu umum / pengunjung belum login / non-admin).
         if (! $article->isPublished()) {
             if (! $user) {
                 abort(404);
             }
 
-            // Status draft dan rejected HANYA boleh dipratinjau oleh Admin
             if (in_array($article->status, ['draft', 'rejected']) && ! $isAdmin) {
                 abort(404);
             }
 
-            // Status pending_review hanya boleh dilihat oleh Admin atau penulis pemilik artikel
             if ($article->status === 'pending_review' && ! $isAdmin && $user->id !== $article->user_id) {
                 abort(404);
             }
 
-            // Status published tapi waktu terbit masih di masa depan hanya boleh dilihat oleh Admin
             if ($article->status === 'published' && ! $isAdmin) {
                 abort(404);
             }

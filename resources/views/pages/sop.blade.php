@@ -22,9 +22,7 @@
     <main class="flex-grow pt-28 sm:pt-32 pb-20 px-4 sm:px-6 font-sans">
         <div class="w-full max-w-4xl mx-auto">
 
-            <!-- Breadcrumb & Header Title -->
             <div class="flex flex-col items-center text-center mb-8 sm:mb-12">
-                <!-- Breadcrumbs -->
                 <nav class="flex items-center gap-2 mb-3 text-xs sm:text-sm text-stone-500 font-sans" aria-label="Breadcrumb">
                     <a href="{{ route('home') }}" class="hover:text-stone-900 transition-colors">Beranda</a>
                     <span class="text-stone-300">/</span>
@@ -33,23 +31,19 @@
                     <span class="text-forest font-semibold">SOP Pelayanan</span>
                 </nav>
 
-                <!-- Badge -->
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest text-xs font-semibold mb-3 tracking-wide">
                     <span class="w-1.5 h-1.5 rounded-full bg-forest"></span>
                     <span>Standar Pelayanan Publik</span>
                 </div>
 
-                <!-- Main Title -->
                 <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl text-stone-900 font-bold leading-tight md:leading-snug mb-3 max-w-3xl">
                     Standar Operasional Pelayanan (SOP)
                 </h1>
 
-                <!-- Subtitle (14px on mobile) -->
                 <p class="font-sans text-stone-600 text-[14px] sm:text-base md:text-lg max-w-2xl leading-relaxed mb-6">
                     Pedoman resmi prosedur, berkas persyaratan, estimasi waktu, dan tautan formulir layanan administrasi sekolah bagi siswa, alumni, orang tua, serta masyarakat.
                 </p>
 
-                <!-- Clean Compact Info Strip -->
                 <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
                     <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 font-medium border border-emerald-100">
                         <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -66,10 +60,8 @@
                 </div>
             </div>
 
-            <!-- SOP List (Exclusive Accordion: only one open at a time) -->
             <div id="sop-accordion-container" class="space-y-3.5 sm:space-y-4">
 
-                <!-- ITEM 1: Legalisir Ijazah & Rapor -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="legalisir-ijazah">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -136,8 +128,7 @@
                                     </ol>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
-                                <div class="pt-2 flex flex-wrap items-center gap-2.5">
+<!--                                <div class="pt-2 flex flex-wrap items-center gap-2.5">
                                     <a
                                         href="https://wa.me/6281234567890?text=Halo%20Admin%20TU%20SMAN%201%20Malingping,%20saya%20ingin%20konsultasi%20mengenai%20pelayanan%20Legalisir%20Ijazah"
                                         target="_blank"
@@ -157,12 +148,12 @@
                                         <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </div>
+                                -->
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ITEM 2: Janji Temu & Kunjungan Tamu -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="janji-temu">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -215,7 +206,7 @@
                                     </ul>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
+<!-- 
                                 <div class="pt-2 flex flex-wrap items-center gap-2.5">
                                     <a
                                         href="https://wa.me/6281234567890?text=Halo%20Humas%20SMAN%201%20Malingping,%20saya%20ingin%20mengajukan%20permohonan%20janji%20temu%20dengan%20Kepala%20Sekolah%20atau%20Guru"
@@ -236,12 +227,12 @@
                                         <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </div>
+-->                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ITEM 3: Surat Keterangan Siswa Aktif -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="surat-siswa-aktif">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -293,7 +284,7 @@
                                     </ul>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
+<!--
                                 <div class="pt-2 flex flex-wrap items-center gap-2.5">
                                     <a
                                         href="https://wa.me/6281234567890?text=Halo%20Admin%20TU%20SMAN%201%20Malingping,%20saya%20ingin%20mengajukan%20Surat%20Keterangan%20Siswa%20Aktif"
@@ -314,12 +305,12 @@
                                         <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </div>
+-->                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ITEM 4: Pengambilan Ijazah Asli -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="pengambilan-ijazah">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -371,7 +362,7 @@
                                     </ul>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
+<!--
                                 <div class="pt-2 flex flex-wrap items-center gap-2.5">
                                     <a
                                         href="https://wa.me/6281234567890?text=Halo%20TU%20SMAN%201%20Malingping,%20saya%20ingin%20konfirmasi%20jadwal%20pengambilan%20ijazah%20asli"
@@ -383,12 +374,12 @@
                                         <svg class="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </div>
+-->                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ITEM 5: Mutasi Siswa (Masuk & Keluar) -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="mutasi-siswa">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -447,7 +438,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
+<!--
                                 <div class="pt-2 flex flex-wrap items-center gap-2.5">
                                     <a
                                         href="https://wa.me/6281234567890?text=Halo%20Kesiswaan%20SMAN%201%20Malingping,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Mutasi%20Siswa"
@@ -468,12 +459,12 @@
                                         <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </div>
+-->                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ITEM 6: Penggantian Ijazah Hilang / Rusak (SKPI) -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="ijazah-hilang-skpi">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -526,7 +517,7 @@
                                     </ul>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
+<!--
                                 <div class="pt-2 flex flex-wrap items-center gap-2.5">
                                     <a
                                         href="https://wa.me/6281234567890?text=Halo%20TU%20SMAN%201%20Malingping,%20saya%20ingin%20konsultasi%20pengurusan%20Surat%20Keterangan%20Pengganti%20Ijazah%20Hilang"
@@ -547,12 +538,12 @@
                                         <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </div>
+-->                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ITEM 7: Konseling BK & Wali Murid -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="konseling-bk">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -592,8 +583,8 @@
                                     </div>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
                                 <div class="pt-2 flex flex-wrap items-center gap-2.5">
+                                <!--
                                     <a
                                         href="https://wa.me/6281234567890?text=Halo%20Tim%20BK%20SMAN%201%20Malingping,%20saya%20ingin%20konsultasi%20mengenai%20perkembangan%20putra%20putri%20saya"
                                         target="_blank"
@@ -603,6 +594,7 @@
                                         <span>Hubungi Konseling Guru BK (WhatsApp)</span>
                                         <svg class="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
+                                -->    
                                     <a
                                         href="https://snpmb.bppp.kemdikbud.go.id/"
                                         target="_blank"
@@ -618,7 +610,6 @@
                     </div>
                 </div>
 
-                <!-- ITEM 8: Peminjaman Ruang & Fasilitas -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="sarpras-fasilitas">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -658,7 +649,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
+<!--
                                 <div class="pt-2 flex flex-wrap items-center gap-2.5">
                                     <a
                                         href="https://wa.me/6281234567890?text=Halo%20Sarpras%20SMAN%201%20Malingping,%20saya%20ingin%20konfirmasi%20ketersediaan%20peminjaman%20ruang%20dan%20fasilitas"
@@ -670,12 +661,12 @@
                                         <svg class="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </div>
+-->                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ITEM 9: Layanan Pengaduan & Aspirasi -->
                 <div class="bg-white p-5 sm:p-6 rounded-2xl md:rounded-[1.5rem] border border-stone-200 shadow-sm group sop-item transition-all duration-300" id="layanan-pengaduan">
                     <button class="w-full font-serif text-base sm:text-lg text-stone-900 cursor-pointer flex justify-between items-center font-semibold sop-toggle focus:outline-none text-left gap-4" type="button">
                         <div class="flex-1">
@@ -715,7 +706,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Action Buttons (External Tab) -->
+ <!-- 
                                 <div class="pt-2 flex flex-wrap items-center gap-2.5">
                                     <a
                                         href="https://www.lapor.go.id/"
@@ -736,6 +727,7 @@
                                         <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </div>
+-->                                
                             </div>
                         </div>
                     </div>
@@ -743,7 +735,6 @@
 
             </div>
 
-            <!-- Information Footer Card -->
             <div class="mt-10 sm:mt-12 p-6 sm:p-8 rounded-2xl md:rounded-[1.5rem] bg-stone-100/90 border border-stone-200/90 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                 <div class="max-w-xl">
                     <span class="inline-block text-[11px] font-bold font-sans uppercase tracking-widest text-forest bg-forest/10 px-3 py-1 rounded-full mb-2">Maklumat Pelayanan</span>
@@ -759,7 +750,7 @@
                         href="{{ route('contact') }}"
                         class="px-5 py-2.5 rounded-full bg-forest text-white text-[13px] sm:text-sm font-semibold hover:bg-stone-900 transition-colors text-center shadow-sm"
                     >
-                        Hubungi Kontak Resmi
+                        Kontak Resmi
                     </a>
                 </div>
             </div>
@@ -767,7 +758,6 @@
         </div>
     </main>
 
-    <!-- Floating Table of Contents Button (Melayang) -->
     <aside aria-label="Navigasi Daftar Isi SOP">
         <button
             type="button"
@@ -784,14 +774,12 @@
         </button>
     </aside>
 
-    <!-- Table of Contents Overlay Backdrop -->
     <div
         id="toc-overlay"
         class="fixed inset-0 bg-stone-900/60 backdrop-blur-2xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none"
         aria-hidden="true"
     ></div>
 
-    <!-- Table of Contents Modal Container (Responsive: bottom-sheet on mobile, centered modal on desktop) -->
     <div
         id="toc-modal-wrapper"
         class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 pointer-events-none transition-all duration-300"
@@ -803,12 +791,10 @@
             aria-labelledby="toc-modal-title"
             class="w-full sm:max-w-md bg-white rounded-t-[1.75rem] sm:rounded-3xl shadow-2xl border-t sm:border border-stone-200/90 overflow-hidden transition-all duration-300 opacity-0 translate-y-8 sm:translate-y-0 sm:scale-95 pointer-events-none flex flex-col max-h-[82vh] sm:max-h-[78vh] font-sans"
         >
-            <!-- Mobile Pull Indicator / Drag Handle -->
             <div class="pt-2.5 pb-1 flex justify-center sm:hidden bg-stone-50/90">
                 <div class="w-10 h-1 bg-stone-300 rounded-full"></div>
             </div>
 
-            <!-- Modal Header -->
             <div class="px-4 py-3 sm:px-5 sm:py-3.5 border-b border-stone-100 flex items-center justify-between bg-stone-50/90 shrink-0">
                 <div class="flex items-center gap-2.5">
                     <div class="w-8 h-8 rounded-xl bg-forest/10 text-forest flex items-center justify-center shrink-0">
@@ -837,7 +823,6 @@
                 </button>
             </div>
 
-            <!-- Modal Body (Titles Only, Touch Friendly, Perfectly Spaced on Mobile) -->
             <div class="p-2 sm:p-2.5 overflow-y-auto overscroll-contain space-y-0.5 sm:space-y-1">
                 @php
                     $tocItems = [
@@ -867,7 +852,6 @@
                 @endforeach
             </div>
 
-            <!-- Mobile subtle footer indicator -->
             <div class="px-4 py-2 bg-stone-50/70 border-t border-stone-100 text-center sm:hidden text-[11px] text-stone-400">
                 9 Standar Pelayanan Tersedia
             </div>
@@ -885,7 +869,6 @@
             const tocCloseBtn = document.getElementById('toc-close-btn');
             const tocNavItems = document.querySelectorAll('.toc-nav-item');
 
-            // Exclusive Accordion: Opening one closes all others
             function toggleItem(item, shouldOpen) {
                 const content = item.querySelector('.sop-content');
                 const icon = item.querySelector('.sop-icon');
@@ -894,7 +877,6 @@
                 const isOpen = content.style.gridTemplateRows === '1fr';
                 const openState = typeof shouldOpen === 'boolean' ? shouldOpen : !isOpen;
 
-                // Close all other SOP items
                 sopItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         const otherContent = otherItem.querySelector('.sop-content');
@@ -920,7 +902,6 @@
                 }
             }
 
-            // Accordion click handlers
             sopItems.forEach(item => {
                 const toggle = item.querySelector('.sop-toggle');
                 if (toggle) {
@@ -933,7 +914,6 @@
                 }
             });
 
-            // Table of Contents Modal Handlers
             function openToc() {
                 if (!tocModal || !tocOverlay) return;
                 tocOverlay.classList.remove('opacity-0', 'pointer-events-none');
@@ -971,14 +951,12 @@
                 });
             }
 
-            // Close on Escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && tocModal && !tocModal.classList.contains('pointer-events-none')) {
                     closeToc();
                 }
             });
 
-            // TOC Item Navigation
             tocNavItems.forEach(navItem => {
                 navItem.addEventListener('click', () => {
                     const targetId = navItem.getAttribute('data-target');
@@ -998,7 +976,6 @@
                 });
             });
 
-            // Auto-open hash anchor if present in URL (e.g., #legalisir-ijazah)
             if (window.location.hash) {
                 const targetEl = document.querySelector(window.location.hash);
                 if (targetEl && targetEl.classList.contains('sop-item')) {

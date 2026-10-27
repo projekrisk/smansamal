@@ -87,7 +87,6 @@
             if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
             mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
 
-            // Dynamic Sticky & Expanding Header on Scroll for All Pages
             const headerWrapper = document.getElementById('header-wrapper');
             const mainHeader = document.getElementById('main-header');
 

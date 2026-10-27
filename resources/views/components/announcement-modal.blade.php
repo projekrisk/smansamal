@@ -10,9 +10,6 @@
     }
 @endphp
 
-{{-- ========================================================================= --}}
-{{-- MODEL 1: PENGUMUMAN POPUP OTOMATIS SAAT HALAMAN DIBUKA                    --}}
-{{-- ========================================================================= --}}
 @if($popupAnnouncement)
 <div
     x-data="{
@@ -46,7 +43,6 @@
     aria-modal="true"
     aria-labelledby="popup-announcement-title"
 >
-    <!-- Overlay Backdrop -->
     <div
         x-show="open"
         x-transition:enter="ease-out duration-300"
@@ -59,7 +55,6 @@
         class="fixed inset-0 bg-stone-950/80 backdrop-blur-md transition-opacity"
     ></div>
 
-    <!-- Modal Card -->
     <div
         x-show="open"
         x-transition:enter="ease-out duration-300"
@@ -146,9 +141,6 @@
 </div>
 @endif
 
-{{-- ========================================================================= --}}
-{{-- MODEL 2: PENGUMUMAN MELAYANG (SEBELAH KIRI - KLIK UNTUK BUKA MODAL)       --}}
-{{-- ========================================================================= --}}
 @if($floatingAnnouncement)
 <div
     x-data="{
@@ -162,7 +154,6 @@
     }"
     class="font-sans"
 >
-    <!-- Floating Button (Sebelah Kiri - Model Mengambang seperti Back to Top) -->
     <aside
         aria-label="Pengumuman Mengambang"
         class="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40"
@@ -175,27 +166,23 @@
             aria-haspopup="dialog"
             :aria-expanded="floatingOpen.toString()"
         >
-            <!-- Pulsing Badge Indicator -->
             <span class="relative flex h-2.5 w-2.5 flex-shrink-0">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-terracotta opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
             </span>
 
-            <!-- Megaphone / Broadcast Icon Container -->
             <div class="w-7 h-7 rounded-full bg-forest/10 text-forest group-hover:bg-forest group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
                 </svg>
             </div>
 
-            <!-- Title / Label -->
             <span class="font-sans text-xs font-bold text-stone-800 group-hover:text-forest transition-colors max-w-[110px] sm:max-w-[200px] truncate leading-tight">
                 {{ $floatingAnnouncement->title }}
             </span>
         </button>
     </aside>
 
-    <!-- Floating Modal Popup (Muncul Saat Tombol Mengambang Diklik) -->
     <div
         x-show="floatingOpen"
         x-cloak
@@ -206,7 +193,6 @@
         aria-modal="true"
         aria-labelledby="floating-announcement-title"
     >
-        <!-- Overlay Backdrop -->
         <div
             x-show="floatingOpen"
             x-transition:enter="ease-out duration-300"
@@ -219,7 +205,6 @@
             class="fixed inset-0 bg-stone-950/80 backdrop-blur-md transition-opacity"
         ></div>
 
-        <!-- Modal Card -->
         <div
             x-show="floatingOpen"
             x-transition:enter="ease-out duration-300"
