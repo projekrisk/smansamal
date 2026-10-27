@@ -163,8 +163,7 @@
             </div>
 
             @if(\App\Models\Setting::getBool('ad_bottom_article_enabled') && \App\Models\Setting::get('ad_bottom_article_code'))
-                <div class="my-10 p-5 text-center bg-stone-50 rounded-2xl border border-stone-200/80 overflow-hidden not-prose ad-container ad-bottom-article shadow-xs">
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-stone-400 block mb-2.5">Iklan</span>
+                <div class="w-full overflow-hidden not-prose ad-container ad-bottom-article">
                     {!! \App\Models\Setting::get('ad_bottom_article_code') !!}
                 </div>
             @endif
@@ -442,7 +441,7 @@
                     <svg id="icon-play" class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     <svg id="icon-stop" class="w-4 h-4 hidden text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <span id="audio-label" class="text-xs font-bold text-stone-800 hidden sm:inline-block">Dengar Suara</span>
+                <span id="audio-label" class="text-xs font-bold text-stone-800 hidden sm:inline-block">Dengarkan</span>
             </button>
 
             <div class="w-px h-5 bg-stone-200"></div>
@@ -616,7 +615,7 @@
                 isReading = false;
                 iconPlay.classList.remove('hidden');
                 iconStop.classList.add('hidden');
-                if (audioLabel) audioLabel.textContent = 'Dengar Suara';
+                if (audioLabel) audioLabel.textContent = 'Dengarkan';
                 if (audioPlayerBar) audioPlayerBar.classList.remove('border-forest', 'ring-2', 'ring-forest/20');
             };
 
@@ -624,7 +623,7 @@
                 isReading = false;
                 iconPlay.classList.remove('hidden');
                 iconStop.classList.add('hidden');
-                if (audioLabel) audioLabel.textContent = 'Dengar Suara';
+                if (audioLabel) audioLabel.textContent = 'Dengarkan';
                 if (audioPlayerBar) audioPlayerBar.classList.remove('border-forest', 'ring-2', 'ring-forest/20');
             };
 
@@ -642,7 +641,7 @@
             isReading = false;
             iconPlay.classList.remove('hidden');
             iconStop.classList.add('hidden');
-            if (audioLabel) audioLabel.textContent = 'Dengar Suara';
+            if (audioLabel) audioLabel.textContent = 'Dengarkan';
             if (audioPlayerBar) audioPlayerBar.classList.remove('border-forest', 'ring-2', 'ring-forest/20');
         }
 

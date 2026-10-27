@@ -216,8 +216,7 @@ class Article extends Model
 
         $targetParagraph = max(1, (int) Setting::get('ad_in_article_paragraph', 2));
 
-        $adHtml = '<div class="my-8 py-5 px-4 text-center bg-stone-50 rounded-2xl border border-stone-200/80 overflow-hidden not-prose ad-container ad-in-article shadow-xs">'
-            .'<span class="text-[10px] uppercase font-bold tracking-widest text-stone-400 block mb-2.5">Iklan</span>'
+        $adHtml = '<div class="w-full overflow-hidden not-prose ad-container ad-in-article">'
             .$adCode
             .'</div>';
 

@@ -157,8 +157,7 @@
             </div>
 
             @if(\App\Models\Setting::getBool('ad_bottom_article_enabled') && \App\Models\Setting::get('ad_bottom_article_code'))
-                <div class="my-10 p-5 text-center bg-stone-50 rounded-2xl border border-stone-200/80 overflow-hidden not-prose ad-container ad-bottom-article shadow-xs">
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-stone-400 block mb-2.5">Iklan</span>
+                <div class="w-full overflow-hidden not-prose ad-container ad-bottom-article">
                     {!! \App\Models\Setting::get('ad_bottom_article_code') !!}
                 </div>
             @endif
